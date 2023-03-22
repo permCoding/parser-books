@@ -14,6 +14,7 @@ def get_books(html):
         head = prod.find('div', class_="product-title__head").text.strip()
         author = prod.find('div', class_="product-title__author").text.strip()
         price = prod.find('div', class_="product-price__value").text.strip().replace('\xa0','')
+        # price = prod.find('div', class_="product-price__value").text.strip().replace(' ', ' ')
         ref = pref + prod.find('a', class_="product-card__row")['href']
         books.append([head,author,price,ref])  # добавим данные о книге
     return books
